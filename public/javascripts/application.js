@@ -16,4 +16,23 @@ $(document).ready(function () {
   // to toggle hidden content
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
+
+  var now = new Date();
+  now.setDate(now.getDate()+7);
+
+  day = now.getDay();
+  calendarDate = now.getDate();
+  month = now.getMonth();
+
+  var dayName = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+  var dayName = dayName[day];
+
+  var monthName = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  var monthName = monthName[month];
+
+  var oneWeeksTime = dayName + " " + calendarDate + " " + monthName + " 2017"
+
+  $( "span.document-expiry-date" ).replaceWith( oneWeeksTime );
 })
