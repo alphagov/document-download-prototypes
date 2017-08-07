@@ -1,0 +1,94 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+
+  <div class="header-proposition">
+    <div class="content">
+      <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+      <nav id="proposition-menu">
+        <a href="/" id="proposition-name">
+          {# Set serviceName in config.js. Use a block to override on a page. #}
+          {% block service_name %}
+            {% if serviceName %} {{ serviceName }} {% endif %}
+          {% endblock %}
+        </a>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Your document
+      </h1>
+      <p>
+        This document is available for 7 days, until 11:59&nbsp;pm <span class='document-expiry-date'>Monday 8 August 2017</span>.</p>
+      </p>
+      <p>
+        To keep this document you must download or print it.
+      </p>
+      <h2 class='heading-medium'>
+        Keep this document
+      </h2>
+      <ul class='loose-list'>
+        <li>
+          <a href='/public/documents/001-example.pdf' download>
+            Download to your computer
+          </a>
+          <p>
+            Don’t download to a public computer.
+          </p>
+        </li>
+        <li>
+          <a href="/public/documents/001-example.pdf" value='print'>
+            Print document
+          </a>
+        </li>
+        <li>
+          <a href='post-my-document'>
+            Can’t print or download the document?
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+    <ul>
+      <li>
+        <a href="/prototype-admin/clear-data">Clear data</a>
+      </li>
+    </ul>
+  {% endif %}
+{% endblock %}
+
+{% block body_end %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block page_scripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
