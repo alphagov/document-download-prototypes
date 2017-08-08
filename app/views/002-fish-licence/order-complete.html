@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="govuk-box-highlight">
+        <h1 class="bold-large">You’ve successfully ordered your licence</h1>
+      </div>
+        <h4 class='heading-small'>Licence Name:</h4>
+        <p>{{ data['full-name'] }}</p>
+
+        <h4 class='heading-small'>Licence Address:</h4>
+        {{ data['address'] }}
+
+        <h4 class='heading-small'>Your licence will be sent to:</h4>
+        <p>
+          {% if data['email'] %}
+            {{ data['email'] }}
+          {% else %}
+            {{ data['phone'] }}
+          {% endif %}
+        </p>
+
+      <form action='start'>
+        <input type="submit" class="button" value="Finished">
+      </form>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

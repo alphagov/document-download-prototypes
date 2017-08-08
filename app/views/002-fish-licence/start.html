@@ -1,0 +1,101 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+<p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+
+<div class="header-proposition">
+  <div class="content">
+    <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+    <nav id="proposition-menu">
+      <a href="/" id="proposition-name">
+        {# Set serviceName in config.js. Use a block to override on a page. #}
+        {% block service_name %}
+        {% if serviceName %} {{ serviceName }} {% endif %}
+        {% endblock %}
+      </a>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block header_class %}
+with-proposition
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        Apply for a junior fishing licence
+      </h1>
+      <p>
+        Junior fishing licences are for children between 12 and 16.
+      </p>
+      <p>
+        The licences are free.
+      </p>
+      <p>
+        This licence can start on any date as long as it’s within 90 days of the day you apply for it.
+      </p>
+      <form method="post" action='name'>
+        <input type="submit" class="button" value="Apply now">
+      </form>
+    </div>
+    <div class='column-one-third'>
+      <aside class="govuk-related-items" data-module="track-click" role="complementary">
+        <h2 class='heading-medium' data-track-count="sidebarRelatedItemSection">
+          Fishing and hunting
+        </h2>
+        <nav role="navigation">
+          <ul>
+            <li>
+              <a data-track-category="relatedLinkClicked" data-track-action="1.1" data-track-label="/freshwater-rod-fishing-rules" data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;Freshwater rod fishing rules&quot;}" href="/freshwater-rod-fishing-rules">Freshwater rod fishing rules</a>
+            </li>
+            <li class="related-items-more">
+              <a data-track-category="relatedLinkClicked" data-track-action="1.2" data-track-label="/browse/environment-countryside/fishing-hunting" data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;More&quot;}" href="/browse/environment-countryside/fishing-hunting">
+                More
+                <span class="visuallyhidden">
+                  in
+                  Fishing and hunting
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}
+
+{% block footer_support_links %}
+{% if useAutoStoreData %}
+<ul>
+  <li>
+    <a href="/prototype-admin/clear-data">Clear data</a>
+  </li>
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block body_end %}
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block page_scripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
