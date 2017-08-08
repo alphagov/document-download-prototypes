@@ -1,0 +1,4 @@
+---
+applications:
+- name: dd-prototype
+  memory: 128M
