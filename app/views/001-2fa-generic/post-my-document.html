@@ -58,7 +58,11 @@
             Name
           </dt>
           <dd class="cya-answer">
-            {{ data['full-name'] }}
+            {% if data['full-name'] %}
+              {{ data['full-name'] }}
+            {% else %}
+              Jane Dawkin
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="change-name">
@@ -72,7 +76,13 @@
             Address
           </dt>
           <dd class="cya-answer">
-            {{ data['address'] }}
+            {% if data['address'] %}
+              {{ data['address'] }}
+            {% else %}
+              123 Street<br>
+              Town<br>
+              AA11 1AA
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="change-postal-address">
