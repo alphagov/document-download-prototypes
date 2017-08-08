@@ -37,22 +37,14 @@
 {% include "includes/phase_banner_alpha.html" %}
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">
-        Address your documents are sent to
-      </h1>
-      <p>
-        Is this something that will be updated with the service?
-      </p>
-      <form action='post-my-document' method="post" action='post-my-document'>
-        <div class="form-group">
-          <label class="form-label-bold" for="address">Address</label>
-          <textarea class="form-control form-control-3-4" name="address" rows="5">
-            {{ data['address'] }}
-          </textarea>
-        </div>
-        <input type="submit" class="button" value="Save address">
-      </form>
-    </div>
+      <div class="govuk-box-highlight">
+        <h1 class="bold-large">Your documents will be sent</h1>
+        <p>
+          Your reference number is <br>
+          <strong class="heading-medium">HDJ2123F</strong>
+        </p>
+      </div>
+      <p>We have sent you a confirmation email.</p>
   </div>
 </main>
 

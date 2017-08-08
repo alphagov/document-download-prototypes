@@ -58,7 +58,7 @@
             Name
           </dt>
           <dd class="cya-answer">
-            Sarah Philips
+            {{ data['full-name'] }}
           </dd>
           <dd class="cya-change">
             <a href="change-name">
@@ -72,9 +72,7 @@
             Address
           </dt>
           <dd class="cya-answer">
-            72 Guild Street<br />
-            London<br />
-            SE23 6FH
+            {{ data['address'] }}
           </dd>
           <dd class="cya-change">
             <a href="change-postal-address">
@@ -84,7 +82,7 @@
         </div>
       </dl>
 
-      <form method="post" action='print-confirmation'>
+      <form method="post" action='post-confirmation'>
         <input type="submit" class="button" value="Post my document">
       </form>
     </div>

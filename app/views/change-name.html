@@ -43,12 +43,12 @@
       <p>
         Is this something that will be updated with the service?
       </p>
-      <form method="post" action='post-my-document'>
+      <form action='post-my-document' method="post" action='post-my-document'>
         <div class="form-group">
           <label class="form-label-bold" for="full-name">Full name</label>
-          <input type="text" class="form-control" id="full-name">
+          <input type="full-name" class="form-control" name='full-name' value="{{ data['full-name'] }}">
         </div>
-        <input type="submit" class="button" value="Save address">
+        <input type="submit" class="button" value="Save name">
       </form>
     </div>
   </div>
