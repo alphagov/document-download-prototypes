@@ -41,7 +41,11 @@ with-proposition
         How can we send you your licence details?
       </h1>
 
-      <form action='terms-conditions' method="post">
+      <p>
+        You can choose either email or phone.
+      </p>
+
+      <form action='terms-conditions' method="post" autocomplete="off">
         <div class="form-group">
           <label class="form-label-bold" for="email">Email address</label>
           <input type="email" class="form-control" name='email'>
