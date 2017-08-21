@@ -27,6 +27,16 @@ router.get('/zj4R1c51Fk4f', function(req, res) {
 
 });
 
+router.get('/n9EEARjAtN3i', function(req, res) {
+
+  if (req.session.alreadyDownloaded) {
+    return res.redirect('/zj4R1c51Fk4f/expired');  
+  }
+
+  res.render('n9EEARjAtN3i/index');
+
+});
+
 router.get('/zj4R1c51Fk4f/downloaded', function(req, res) {
 
   res.render('zj4R1c51Fk4f/downloaded');
