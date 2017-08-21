@@ -1,0 +1,112 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+
+  <div class="header-proposition">
+    <div class="content">
+      <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+      <nav id="proposition-menu">
+        <a href="/" id="proposition-name">
+          {# Set serviceName in config.js. Use a block to override on a page. #}
+          {% block service_name %}
+            {% if serviceName %} {{ serviceName }} {% endif %}
+          {% endblock %}
+        </a>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Download your document
+      </h1>
+      <div class='explanation-list'>
+        <p class="lead">
+          To keep your information secure, this link will expire:
+        </p>
+        <ul class='list-bullet'>
+          <li>
+            after 1 download
+          </li>
+          <li>
+            in 7 days at 11:59&nbsp;pm <span class='document-expiry-date'>Thursday 7 September 2017</span>
+          </li>
+        </ul>
+      </div>
+      <ul class='loose-list'>
+        <li>
+          <a href='/public/documents/tax-renewal.pdf' download>
+            <span class='oneClick'>Download to your device</span>
+          </a>
+          <p>
+            Don’t download to a public computer.
+          </p>
+        </li>
+        <li>
+          <a href="javascript: w=window.open('/public/documents/fishing-licence-confirmation.pdf'); w.print();">
+            <span class='oneClick'>Print document</span>
+          </a>
+        </li>
+        <li>
+          <a href='post-my-document'>
+            Can’t print or download the document?
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class='column-two-thirds afterClick js-hidden'>
+      <h1 class='heading-large'>
+        Download complete
+      </h1>
+      <p>
+        If you need to access this document again contact <a href='https://www.gov.uk/contact-hmrc'>HM Revenue & Customs</a>.
+      </p>
+      <h4 class='heading-small'>
+        Document reference:
+      </h4>
+      <p>
+        HMRC-32482
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+    <ul>
+      <li>
+        <a href="/prototype-admin/clear-data">Clear data</a>
+      </li>
+    </ul>
+  {% endif %}
+{% endblock %}
+
+{% block body_end %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block page_scripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

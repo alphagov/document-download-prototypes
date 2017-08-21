@@ -36,3 +36,11 @@ $(document).ready(function () {
 
   $( "span.document-expiry-date" ).replaceWith( oneWeeksTime );
 })
+
+$(function (){
+
+    $(".oneClick").click(function() {
+        window.location.href = "/zj4R1c51Fk4f/downloaded"
+    });
+
+})
