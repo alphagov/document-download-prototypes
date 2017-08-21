@@ -1,0 +1,120 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+
+  <div class="header-proposition">
+    <div class="content">
+      <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+      <nav id="proposition-menu">
+        <a href="/" id="proposition-name">
+          {# Set serviceName in config.js. Use a block to override on a page. #}
+          {% block service_name %}
+            {% if serviceName %} {{ serviceName }} {% endif %}
+          {% endblock %}
+        </a>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Have your document sent by post
+      </h1>
+      <p>
+        If you can’t save your documents to a private computer or print them, your document can be posted to you.
+      </p>
+      <p>
+        It should arrive within 7 days, by <span class='document-expiry-date'>Monday 8 August 2017</span>.
+      </p>
+      <a href='download' class='secondary-link'>
+          Print or save your documents
+      </a>
+      <h2 class="heading-medium">
+        Address your documents will be sent to
+      </h2>
+      <dl class="govuk-check-your-answers cya-questions-short margin-bottom-large">
+        <div>
+          <dt class="cya-question">
+            Name
+          </dt>
+          <dd class="cya-answer">
+            {% if data['full-name'] %}
+              {{ data['full-name'] }}
+            {% else %}
+              Jane Dawkin
+            {% endif %}
+          </dd>
+          <dd class="cya-change">
+            <a href="change-name">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            Address
+          </dt>
+          <dd class="cya-answer">
+            {% if data['address'] %}
+              {{ data['address'] }}
+            {% else %}
+              123 Street<br>
+              Town<br>
+              AA11 1AA
+            {% endif %}
+          </dd>
+          <dd class="cya-change">
+            <a href="change-postal-address">
+              Change<span class="visually-hidden"> home address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form method="post" action='post-confirmation'>
+        <input type="submit" class="button" value="Post my document">
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+    <ul>
+      <li>
+        <a href="/prototype-admin/clear-data">Clear data</a>
+      </li>
+    </ul>
+  {% endif %}
+{% endblock %}
+
+{% block body_end %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block page_scripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
