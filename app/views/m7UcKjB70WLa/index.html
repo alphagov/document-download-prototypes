@@ -38,28 +38,22 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">
-        Download your document
+        Confirm your identity
       </h1>
-      <div class='explanation-list'>
-        <p class="lead">
-          To keep your information secure, this link will expire after 1 download.
-        </p>
-      </div>
-      <ul class='loose-list'>
-        <li>
-          <a href='/public/documents/tax-renewal.pdf' download>
-            <span class='oneTimeDownload'>Download to your device</span>
-          </a>
-          <p>
-            Don’t download to a public computer.
-          </p>
-        </li>
-        <li>
-          <a href='post-my-document'>
-            Can’t print or download the document?
-          </a>
-        </li>
-      </ul>
+      <form method="post" action='/m7UcKjB70WLa/download' autocomplete="off">
+        <div class="form-group">
+          <label class="form-label-bold" for="ni-number">
+            National Insurance number
+            <span class="form-hint margin-bottom-20">
+            It's on your National Insurance card, benefit letter, payslip or P60.
+            <br>
+            For example, 'VO 12 34 56 D'.
+            </span>
+      </label>
+      <input type="text" class="form-control" id="ni-number">
+    </div>
+        <input type="submit" class="button" value="Continue">
+      </form>
     </div>
   </div>
 </main>

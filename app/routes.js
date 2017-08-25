@@ -43,6 +43,51 @@ router.get('/zj4R1c51Fk4f/downloaded', function(req, res) {
 
 });
 
+router.get('/m7UcKjB70WLa/download', function(req, res) {
+
+  if (req.session.downloadedOneTime) {
+    return res.redirect('/m7UcKjB70WLa/downloaded-1st-time');  
+  }
+
+  req.session.downloadedOneTime = true;
+  res.render('m7UcKjB70WLa/download');
+
+});
+
+router.get('/m7UcKjB70WLa', function(req, res) {
+
+  if (req.session.downloadedOneTime) {
+    return res.redirect('/m7UcKjB70WLa/nino-2nd-time');  
+  }
+
+  res.render('m7UcKjB70WLa/index');
+
+});
+
+router.get('/m7UcKjB70WLa/download-2nd-time', function(req, res) {
+
+  if (req.session.downloadExpired) {
+    return res.redirect('/m7UcKjB70WLa/expired');  
+  }
+
+  req.session.downloadExpired = true;
+  res.render('m7UcKjB70WLa/download-2nd-time');
+
+});
+
+router.get('/m7UcKjB70WLa/nino-2nd-time', function(req, res) {
+
+  if (req.session.downloadExpired) {
+    return res.redirect('/m7UcKjB70WLa/expired');  
+  }
+
+  res.render('m7UcKjB70WLa/nino-2nd-time');
+
+});
+
+
+
+
 // add your routes here
 
 module.exports = router

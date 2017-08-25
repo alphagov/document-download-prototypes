@@ -39,8 +39,24 @@ $(document).ready(function () {
 
 $(function (){
 
-    $(".oneClick").click(function() {
+    $(".oneTimeDownload").click(function() {
         window.location.href = "/zj4R1c51Fk4f/downloaded"
+    });
+
+})
+
+$(function (){
+
+    $(".oneOfTwoDownload").click(function() {
+        window.location.href = "/m7UcKjB70WLa/downloaded-1st-time"
+    });
+
+})
+
+$(function (){
+
+    $(".twoOfTwoDownload").click(function() {
+        window.location.href = "/m7UcKjB70WLa/downloaded-2nd-time"
     });
 
 })

@@ -38,28 +38,18 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">
-        Download your document
+        Address your documents are sent to
       </h1>
-      <div class='explanation-list'>
-        <p class="lead">
-          To keep your information secure, this link will expire after 1 download.
-        </p>
-      </div>
-      <ul class='loose-list'>
-        <li>
-          <a href='/public/documents/tax-renewal.pdf' download>
-            <span class='oneTimeDownload'>Download to your device</span>
-          </a>
-          <p>
-            Don’t download to a public computer.
-          </p>
-        </li>
-        <li>
-          <a href='post-my-document'>
-            Can’t print or download the document?
-          </a>
-        </li>
-      </ul>
+      <!-- p>
+        Is this something that will be updated with the service?
+      </p -->
+      <form action='post-my-document' method="post" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label-bold" for="address">Address</label>
+          <textarea class="form-control form-control-3-4" name="address" rows="5">{{ data['address'] }}</textarea>
+        </div>
+        <input type="submit" class="button" value="Save address">
+      </form>
     </div>
   </div>
 </main>
