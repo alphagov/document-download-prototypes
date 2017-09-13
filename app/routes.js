@@ -85,6 +85,27 @@ router.get('/m7UcKjB70WLa/nino-2nd-time', function(req, res) {
 
 });
 
+router.get('/BmitNh37tCBbtH8v2XOriNFTng0VRTA1lZKWY7Oxr/download', function(req, res) {
+
+  if (req.session.alreadyDownloaded) {
+    return res.redirect('/zj4R1c51Fk4f/downloaded');  
+  }
+
+  req.session.alreadyDownloaded = true;
+  res.render('BmitNh37tCBbtH8v2XOriNFTng0VRTA1lZKWY7Oxr/download');
+
+});
+
+router.get('/BmitNh37tCBbtH8v2XOriNFTng0VRTA1lZKWY7Oxr', function(req, res) {
+
+  if (req.session.alreadyDownloaded) {
+    return res.redirect('/BmitNh37tCBbtH8v2XOriNFTng0VRTA1lZKWY7Oxr/expired');  
+  }
+
+  res.render('BmitNh37tCBbtH8v2XOriNFTng0VRTA1lZKWY7Oxr/index');
+
+});
+
 
 
 

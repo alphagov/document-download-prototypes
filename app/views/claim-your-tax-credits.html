@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="https://www.gov.uk">Home</a></li>
+      <li><a href="">Section</a></li>
+      <li>Subsection</li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Claim your tax credits
+      </h1>
+
+      <section class="intro">
+        <div class="get-started-intro">
+          <p>Use this service to:</p>
+
+          <ul class='list-bullet margin-bottom-40'>
+            <li>tell the Tax Credit Office about changes to your circumstances, for example if you’ve moved house</li>
+            <li>find out how much and when you’ll be paid</li>
+          </ul>
+        </div>
+        <p id="get-started" class="get-started group">
+          <a href="tax-credit-reference" rel="external" data-transaction-slug="manage-your-tax-credits" class="button-start button" role="button">
+            Start now
+          </a>
+        </p>
+        <span class="destination"> on the Tax Credits service</span>
+      </section>
+
+
+    </div>
+    <div class='column-one-third'>
+      <div class="related-container">
+        <aside class="govuk-related-items" data-module="track-click" role="complementary">
+          <h2 class='heading-medium' data-track-count="sidebarRelatedItemSection">
+            Tax credits
+          </h2>
+
+
+          <nav role="navigation">
+            <ul class='side-bar-list'>
+              <li>
+                <a data-track-category="relatedLinkClicked" data-track-action="1.1" data-track-label="/tax-credits-calculator" data-track-options="{&quot;dimension28&quot;:&quot;3&quot;,&quot;dimension29&quot;:&quot;Tax credits calculator&quot;}" href="/tax-credits-calculator">Tax credits calculator</a>
+              </li>
+              <li>
+                <a data-track-category="relatedLinkClicked" data-track-action="1.2" data-track-label="/changes-affect-tax-credits" data-track-options="{&quot;dimension28&quot;:&quot;3&quot;,&quot;dimension29&quot;:&quot;Changes that affect your tax credits&quot;}" href="/changes-affect-tax-credits">Changes that affect your tax credits</a>
+              </li>
+              <li class="related-items-more">
+                <a data-track-category="relatedLinkClicked" data-track-action="1.3" data-track-label="/browse/benefits/tax-credits" data-track-options="{&quot;dimension28&quot;:&quot;3&quot;,&quot;dimension29&quot;:&quot;More&quot;}" href="/browse/benefits/tax-credits">
+                  More
+                  <span class="visuallyhidden">
+                    in
+                    Tax credits
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+
