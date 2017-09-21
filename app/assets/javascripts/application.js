@@ -60,3 +60,12 @@ $(function (){
     });
 
 })
+
+
+$(function (){
+
+    $("downloadLink").click(function() {
+        window.location.href = "/zj4R1c51Fk4f/downloaded"
+    });
+
+})

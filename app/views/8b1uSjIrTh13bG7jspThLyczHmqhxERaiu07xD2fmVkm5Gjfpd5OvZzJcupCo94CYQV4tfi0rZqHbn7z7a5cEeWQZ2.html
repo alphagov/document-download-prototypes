@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+    $("#downloadLink").click(function (e) {
+        e.preventDefault();
+
+        var href = $(this).attr("href");
+        window.location = href;
+    });
+    $('#downloadLink').trigger('click');
+});
+</script>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="govuk-box-highlight">
+        <h1 class="bold-large">Download complete</h1>
+        <p></p>
+      </div>
+
+
+       <a class='js-hidden' href='/document.pdf' download='download' id='downloadLink'>
+        Download to your device
+      </a>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+

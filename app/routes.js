@@ -108,6 +108,12 @@ router.get('/BmitNh37tCBbtH8v2XOriNFTng0VRTA1lZKWY7Oxr', function(req, res) {
 
 
 
+router.get('/document.pdf', function(req, res) {
+  res.download('public/documents/tax-credit-2017.pdf', 'file-name.pdf')
+})
+
+
+
 
 // add your routes here
 
